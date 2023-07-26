@@ -1,0 +1,26 @@
+
+TEENSY Pin (Old designation in GrblHAL) - New Designation
+
+30 (ST1) - LIM C
+36 (ST0) - LIM 7
+
+40 (STEN Y) - Step C
+39 (STEN Z) - Dir C
+38 (STEN A) - Step 7
+37 (STEN B) - Dir 7
+35 (ST3) - ST1
+34 (ST2) - ST0
+
+
+Changes:
+Made fully optoisolated inputs on all inputs
+Inputs have changed polarity and now require external power!!
+Removed Vacuum / dust collector functionality
+Removed ST0-ST3 5V inputs with protection circuitry, left 2 of them (pins remapped)
+Added C and 7 axes, with limit switch inputs and STEP, DIR outputs
+Added space for capacitors for limit switch inputs to suppress noise
+Removed individual ENABLE for all axes except X,
+Now there's only one Enable / Brake release for all motors
+Rearranged position of spindle PWM to 0-10V converter - bugs possible
+Rearranged ground plane - bugs possible
+Added 2 LDOs on input power - one from Vin to 12V and other 12V to 5V. TEENSY does the 5v to 3.3v conversion. possible to power board with 24V (maybe)
